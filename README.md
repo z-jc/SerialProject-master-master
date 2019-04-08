@@ -1,23 +1,3 @@
 # SerialProject-master
-这是一个串口Demo,里面SerialportLibrary是封装好的串口库
-1、在Activity使用的时候首先设置接收串口数据的回调接口,
-  implements SerialCallBack{}
-  SerialPortCallBackUtils.setCallBack(this);
-2、然后打开串口
-  boolean isOpen = SerialPortUtil.open("/dev/ttyS3", 115200, 0);//里面的参数根据自己的需求自己更改
-  if (isOpen) {
-      Log.e("TAG", "打开成功");
-  } else {
-      Log.e("TAG", "打开失败");
-  }
-3、发送数据
-  byte[] mByte = {0x7E, 0x01, 0x00, 0x00};
-  SerialPortUtil.sendString(ByteUtil.getSum16(mByte, mByte.length));
-4、接收数据
-  在实现的回调接口内读取数据
-  @Override
-  public void onSerialPortData(String serialPortData) {
-      Log.e("TAG", "来自串口的数据:" + serialPortData);
-  }
-5、关闭数据
-  SerialPortUtil.close();
+这是一个串口Demo,里面SerialportLibrary是自己封装好的串口库
+网上的Android串口调试助手也比较多,但是有些看不到串口接收过来的数据,特意自己写了一个,方便自己以后用,如有这样需求的小伙伴,也可以自己下载下来试试看,里面的打开、关闭、接收、发送...都已经写好的有，或者想配置到自己项目中的也可以把modle导入到项目中
