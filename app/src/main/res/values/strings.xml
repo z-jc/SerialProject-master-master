@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">串口调试助手</string>
+    <string name="title_activity_config">参数配置</string>
+</resources>

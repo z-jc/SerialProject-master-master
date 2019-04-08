@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cEA"
+    android:padding="8dp"
+    tools:context=".view.MainActivity">
+
+    <LinearLayout
+        android:id="@+id/lv_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_open"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_xml"
+            android:text="打开串口"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_set"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_btn_xml"
+            android:text="设置"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/lv_read_byte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/lv_top"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="接收区"
+            android:textColor="@color/c31"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_read_byte_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="已接收(字节):0"
+            android:textColor="@color/c31"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/sv_data"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/lv_send_byte"
+        android:layout_below="@+id/lv_read_byte"
+        android:padding="5dp"
+        android:background="@drawable/bg_tv_xml">
+
+        <TextView
+            android:id="@+id/tv_data"
+            android:textSize="16sp"
+            android:textColor="@color/c31"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/lv_send_byte"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/rl_send_data"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="发送区"
+            android:textColor="@color/c31"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_send_byte_length"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="已发送(字节):0"
+            android:textColor="@color/c31"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_send_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <EditText
+            android:id="@+id/ed_send_data"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="8dp"
+            android:padding="5dp"
+            android:textColor="@color/c31"
+            android:textSize="16sp"
+            android:layout_toLeftOf="@+id/btn_send"
+            android:background="@drawable/bg_tv_xml" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_btn_xml"
+            android:text="发送"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="wrap_content"
+            android:layout_below="@+id/btn_send"
+            android:layout_marginTop="8dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/bg_btn_xml"
+            android:text="清除"
+            android:textColor="#FFF"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</RelativeLayout>
